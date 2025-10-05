@@ -3,7 +3,7 @@ Excellent. Below is your **final, GitHub-ready `README.md`** — fully formatted
 ---
 
 ```markdown
-# 🧩 SD Cloner — PicoCalc Edition
+# 🧩 SD Cloner — (for use with PicoCalc Edition, Clockwork Tech, LLC (R))
 ### C Engine + GTK3 GUI for Safe SD Card Imaging and Cloning
 
 ![Build](https://img.shields.io/badge/build-passing-brightgreen.svg)
@@ -21,7 +21,7 @@ Excellent. Below is your **final, GitHub-ready `README.md`** — fully formatted
 **SD Cloner (PicoCalc Edition)** is a safe, modular SD card cloning tool built for Linux systems such as **Pop!_OS 22.04 LTS**.  
 It combines a **hardened C-based engine** for block-level imaging and a **GTK3 graphical interface** that provides a user-friendly workflow with visual progress and device validation.
 
-Originally developed by **Dr. Eric Oliver Flores Toro**, this tool is part of the **Clockwork PicoCalc ecosystem**, enabling users to **backup, duplicate, or restore bootable SD cards** reliably — including those used in the **PicoCalc handheld system**.
+Originally developed by **Dr. Eric Oliver Flores Toro**, this tool for cloning an SD Card, enabling users to **backup, duplicate, or restore bootable SD cards** reliably — including those used in the **PicoCalc handheld system**.
 
 ---
 
