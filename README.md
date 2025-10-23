@@ -45,9 +45,8 @@ Built with GTK 3, featuring:
   - Tools → Read Source / Burn Destination
   - Help → About / Technologies
 
-**Directory Layout
-**```
-
+**Directory Layout**
+```
 /src
 ├── main.c
 ├── sdcloner_engine.c
