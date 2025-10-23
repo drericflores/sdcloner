@@ -1,4 +1,3 @@
-markdown
 SD Cloner — (for use with PicoCalc Edition, Clockwork Tech, LLC (R))
 C Engine + GTK3 GUI for Safe SD Card Imaging and Cloning
 
