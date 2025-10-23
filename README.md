@@ -118,12 +118,33 @@ If a 128 GB source contains only a few gigabytes of actual data, SD Cloner’s e
 
 **Test Summary**
 
-| Test | Description                     | Result                               |
-| - | - |  |
-| 1    | 128 GB to 128 GB clone          | ✅ Passed                             |
-| 2    | 128 GB image → 32 GB (data-fit) | ✅ Passed                             |
-| 3    | Burn `.img` and `.img.gz`       | ✅ Passed                             |
-| 4    | Overwrite protection            | ✅ Passed (engine refused unsafe ops) |
+Absolutely — here’s a **block-style Markdown table** that looks clean and professional on GitHub.
+This layout keeps borders visible and content aligned, giving it a structured, report-like appearance:
+
+```markdown
+> ### ✅ SD Cloner Test Summary
+```
+
+| **Test** | **Description**                   | **Result**                                       |
+| :------: | --------------------------------- | ------------------------------------------------ |
+|   **1**  | 128 GB → 128 GB clone             | 🟢 **Passed**                                    |
+|   **2**  | 128 GB image → 32 GB *(data-fit)* | 🟢 **Passed**                                    |
+|   **3**  | Burn `.img` and `.img.gz` images  | 🟢 **Passed**                                    |
+|   **4**  | Overwrite protection              | 🟢 **Passed** – engine refused unsafe operations |
+
+```markdown
+> **All core functions validated successfully.**
+> - No data integrity issues detected.  
+> - Image compression and reduction verified.  
+> - Safety logic prevented overwrite attempts.
+```
+
+✅ **Tip:**
+
+* Use `>` blockquotes and bold headers for section framing.
+* The `:---------:` syntax centers the “Test” column while keeping others left-aligned.
+* Emojis (🟢 ✅) render cleanly on GitHub and add visual clarity.
+
 
 Roadmap
 
