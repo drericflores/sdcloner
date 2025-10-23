@@ -10,7 +10,7 @@ C Engine + GTK3 GUI for Safe SD Card Imaging and Cloning
 ![Architecture: Engine+GUI](https://img.shields.io/badge/Architecture-Engine+GUI%20Modular-yellow.svg)
 ![Target: PicoCalc](https://img.shields.io/badge/Target-PicoCalc-orange.svg)
 
-Overview
+**Overview**
 
 SD Cloner (PicoCalc Edition) is a safe, modular SD card cloning tool built for Linux systems such as Pop!_OS 22.04 LTS.  
 It combines a hardened C-based engine for block-level imaging and a GTK3 graphical interface that provides a user-friendly workflow with visual progress and device validation.
@@ -19,16 +19,14 @@ Originally developed by Dr. Eric Oliver Flores Toro, this tool for cloning an SD
 
 Goals and Design Principles
 
-| Objective | Description |
-||-|
-| Reliability | Every operation is conservative and validated; the source is always read-only. |
-| Safety | Explicit device verification prevents accidental overwrite of system drives. |
-| Flexibility | Supports raw imaging, FS-aware shrinking, and burning from `.img` / `.img.gz` files. |
-| Usability | Intuitive GTK interface, menus with accelerators, and non-blocking progress feedback. |
+**Objective--Description**
 
+**Reliability**--Every operation is conservative and validated; the source is always read-only
+**Safety**--Explicit device verification prevents accidental overwrite of system drives.
+**Flexibility**--Supports raw imaging, FS-aware shrinking, and burning from `.img` / `.img.gz` files.
+**Usability**--Intuitive GTK interface, menus with accelerators, and non-blocking progress feedback. |
 
-
-Architecture
+**Architecture**
 
 Engine (Core)
 Files: `sdcloner_engine.c`, `sdcloner_engine.h`  
@@ -38,8 +36,8 @@ Implements:
 - Logic for shrinking a 128 GB image to a smaller 32 GB target (if space allows).
 - Safe `dd`, `gzip`, `rsync`, and `parted` orchestration.
 
-GUI Frontend
-File: `sdcloner_gui.c`  
+**GUI Frontend
+**File: `sdcloner_gui.c`  
 Built with GTK 3, featuring:
 - Device selection for true block devices (`/dev/sdX`).
 - Non-blocking worker threads with a pulsing progress bar.
@@ -48,8 +46,8 @@ Built with GTK 3, featuring:
   - Tools → Read Source / Burn Destination
   - Help → About / Technologies
 
-Directory Layout
-```
+**Directory Layout
+**```
 
 /src
 ├── main.c
@@ -62,9 +60,9 @@ Directory Layout
 /images
 ├── screenshot_main.png
 └── screenshot_about.png
-Build Instructions
 
- Prerequisites
+**Build Instructions**
+ **Prerequisites**
 ```bash
 sudo apt update
 sudo apt install -y build-essential libgtk-3-dev linux-libc-dev \
@@ -72,15 +70,15 @@ sudo apt install -y build-essential libgtk-3-dev linux-libc-dev \
                     exfatprogs
 
 
- Compilation
+ **Compilation**
 
 ```bash
 gcc -O2 -Wall -Wextra -c sdcloner_engine.c -o sdcloner_engine.o
 gcc -O2 -Wall -Wextra sdcloner_gui.c sdcloner_engine.o -o sdcloner_gui \
     `pkg-config --cflags --libs gtk+-3.0` -pthread
 ```
-Quick Start
-
+**Quick Start
+**
  Clone or Image a Source Card
 
 ```bash
@@ -92,8 +90,8 @@ Quick Start
 3. Click Read Source to create an image in `~/SDCloner/images/clone-.img.gz`
 4. Or click Burn to Destination to duplicate directly.
 
- Burn an Existing Image
-
+** Burn an Existing Image
+**
 1. File → Open Image… → select `.img` or `.img.gz`
 2. Choose destination `/dev/sdX`
 3. Tools → Burn to Destination
@@ -107,16 +105,12 @@ If a 128 GB source contains only a few gigabytes of actual data, SD Cloner’s e
 3. Creates a shrunken image with only used data, omitting empty sectors.
 4. Writes a valid filesystem-sized image that fits a smaller card (e.g. 32 GB).
 
-Passed validation:
-
+**Passed validation:
+**
  Test 1: 128 GB → 128 GB (Raw clone)
  Test 2: 128 GB → 32 GB (FS-aware shrink)
 
-Screenshots
-
-Insert screenshots of the main window, About dialog, and progress bar here.
-
-Safety and Reliability Model
+**Safety and Reliability Model**
 
  Source is never modified — all mounts are read-only.
  Block devices only — GUI validates with `stat()` and `lsblk`.
@@ -124,7 +118,7 @@ Safety and Reliability Model
  Comprehensive logging for every shell invocation.
  Explicit failure modes to prevent silent corruption.
 
-Test Summary
+**Test Summary**
 
 | Test | Description                     | Result                               |
 | - | - |  |
@@ -141,27 +135,27 @@ Roadmap
  Optional write verification via checksum
  Dark theme + i18n (GTK theming & gettext)
 
-Developer Notes
-
+**Developer Notes
+**
  Engine/GUI separation: all imaging logic resides in the engine.
  The GUI interacts through exported API calls (`sdcloner_clone()`, `burn_image_to_disk()`).
  The `main.c` CLI tool is optional for headless or automated workflows.
  Designed for extensibility: new frontends (Qt or CLI++) can reuse the same engine.
 
-About
+**About**
 
-Author: Dr. Eric Oliver Flores Toro
-Version: 1.0 (October 2025)
-License: GPL v3
-Target Platform: PicoCalc / Pop!_OS 22.04 LTS
-Technologies: C17 · GTK3 · dd · gzip · rsync · parted · losetup · blkid · lsblk
+**Author**: Dr. Eric Oliver Flores Toro
+**Version**: 1.0 (October 2025)
+**License**: GPL v3
+**Target Platform**: PicoCalc / Pop!_OS 22.04 LTS
+**Technologies**: C17 · GTK3 · dd · gzip · rsync · parted · losetup · blkid · lsblk
 
-License
+**License**
 
 This project is licensed under the GNU General Public License v3 (GPLv3).
 See the `LICENSE` file for details.
 
-Acknowledgments
+**Acknowledgments**
 
 Special thanks to the ClockworkPi / PicoCalc community for maintaining open access to firmware resources that made this project possible.
 
