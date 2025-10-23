@@ -79,10 +79,7 @@ gcc -O2 -Wall -Wextra -c sdcloner_engine.c -o sdcloner_engine.o
 gcc -O2 -Wall -Wextra sdcloner_gui.c sdcloner_engine.o -o sdcloner_gui \
     `pkg-config --cflags --libs gtk+-3.0` -pthread
 ```
-
-
-
- 🚀 Quick Start
+Quick Start
 
  Clone or Image a Source Card
 
